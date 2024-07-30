@@ -1,0 +1,15 @@
+#!/bin/python3
+
+def main(list_input):
+    lengths = sorted((len(s), s) for s in list_input)
+    median_index = len(lengths) // 2
+    median_string = lengths[median_index][1]
+    original_position = list_input.index(median_string) + 1
+    return median_string, original_position
+
+if _name_ == "_main_":
+    list_of_strings = input().strip("[]").replace("'", "").split(',')
+    list_of_strings = [s.strip() for s in list_of_strings]
+    string_out, index_out = main(list_of_strings)
+    print(string_out)
+    print(index_out)
